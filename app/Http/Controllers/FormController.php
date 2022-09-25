@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Form;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class FormController extends Controller
 {
+    const EXCEL_FILENAME = 'form_records';
+    const EXCEL_EXT = 'xlsx';
+
     /**
      * Display a listing of the resource.
      *
@@ -38,6 +43,33 @@ class FormController extends Controller
       
     }
 
+    public function renderPDF()
+    {        
+        $latestForm = Form::get()->last();
+        $answers = json_decode($latestForm->answers, true);
+
+        $pdf = App::make('snappy.pdf.wrapper');
+        $pdf->loadview('forms.pdf', compact('answers'));
+
+        return $pdf->stream('forms.pdf.pdf');
+    }
+
+    public function downloadExcel()
+    {
+        $fileName = self::EXCEL_FILENAME.'.'.self::EXCEL_EXT;
+
+        $fileExists = Storage::disk('export')->exists($fileName);
+
+        if (!$fileExists) {
+            return 'No records stored yet.';
+        } else {
+            $formRecords = Excel::load(
+                storage_path('exports').DIRECTORY_SEPARATOR.$fileName
+            );
+        }
+        $formRecords->download('xlsx');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -47,7 +79,7 @@ class FormController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
+        // dd($data);
         $newForm = new Form();
         $answers = [
             '34-a-answer' => $data['34-a-answer'] ?? null,
@@ -84,7 +116,68 @@ class FormController extends Controller
         $newForm->answers = json_encode($answers);
         $newForm->save();
 
-        dd(json_decode($newForm->answers));
+        $sheetData = [];
+        $fileName = self::EXCEL_FILENAME.'.'.self::EXCEL_EXT;
+        $fileExists = Storage::disk('export')->exists($fileName);
+
+        if (!$fileExists) {
+            Excel::create(self::EXCEL_FILENAME, function($excel) {
+                $excel->sheet('Sheet 1');
+            })->store(self::EXCEL_EXT);
+
+            $headerData = [
+                'Form ID', 
+                '34.a Answer', 
+                '34.b Answer',
+                '34.b Answer Details',
+                '35.a Answer',
+                '35.a Answer Details',
+                '35.b Answer',
+                '35.b Date Filed',
+                '35.b Status of Case(s)',
+                '36. Answer',
+                '36. Answer Details',
+                '37. Answer',
+                '37. Answer Details',
+                '38.a Answer',
+                '38.a Answer Details',
+                '38.b Answer',
+                '38.b Answer Details',
+                '39 Answer',
+                '39 Answer Details',
+                '40.a Answer',
+                '40.a Answer Details',
+                '40.b Answer',
+                '40.b Answer Details',
+                '40.c Answer',
+                '40.c Answer Details',
+                '41. Name',
+                '41. Address',
+                '41. Tel. No.',
+                '42. Government Issued ID',
+                '42. ID/License/Passport No.',
+                '42. Date/Place of Issuance'
+            ];
+            $sheetData[] = $headerData;
+        }
+        $rowData = [];
+        $rowData[] = $newForm->id;
+
+        foreach ($answers as $answer) {
+            $rowData[] = $answer ?? '';
+        }
+        $sheetData[] = $rowData;
+
+        Excel::load(
+            storage_path('exports').DIRECTORY_SEPARATOR.$fileName,
+            function ($excel) use ($sheetData) {
+                $excel->sheet('Sheet 1', function($sheet) use ($sheetData) {
+                    $sheet->rows($sheetData);
+                });
+            }
+        )->store(self::EXCEL_EXT);
+
+        return redirect()->route('render-pdf');
     }
 
     /**

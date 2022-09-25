@@ -17,37 +17,37 @@
                     Bureau or Department where you will be appointed,</b><br>
 
                 <b>{{Form::label('34-a-answer','a. within the third degree?')}}<br></b>
-                {{Form::radio('34-a-answer', 'true')}}
+                {{Form::radio('34-a-answer', 'YES')}}
                 {{Form::label('34-a-answer','YES')}}
 
-                {{Form::radio('34-a-answer', 'false')}}
+                {{Form::radio('34-a-answer', 'NO')}}
                 {{Form::label('34-a-answer','NO')}}<br>
 
                 <b>{{Form::label('34-b-answer','b. within the fourth degree (for Local government Unit - Career Employees)?')}}<br></b>
-                {{Form::radio('34-b-answer', 'true')}}
+                {{Form::radio('34-b-answer', 'YES')}}
                 {{Form::label('34-b-answer','YES')}}
 
-                {{Form::radio('34-b-answer', 'false')}}
+                {{Form::radio('34-b-answer', 'NO')}}
                 {{Form::label('34-b-answer','NO')}}<br>
                 
                 {{Form::label('34-b-answer-details', "If YES, give details: ")}}
                 {{Form::text('34-b-answer-details', null, array('class'=>'form-control', 'id' => '34-b-answer-details', 'disabled'))}}
 
                 <b>{{Form::label('35-a-answer','35. a. Have you ever been found guilty of any administrative offense?')}}<br></b>
-                {{Form::radio('35-a-answer', 'true')}}
+                {{Form::radio('35-a-answer', 'YES')}}
                 {{Form::label('35-a-answer','YES')}}
 
-                {{Form::radio('35-a-answer', 'false')}}
+                {{Form::radio('35-a-answer', 'NO')}}
                 {{Form::label('35-a-answer','NO')}}<br>
                 
                 {{Form::label('35-a-answer-details', "If YES, give details: ")}}
                 {{Form::text('35-a-answer-details',null, array('class'=>'form-control', 'id' => '35-a-answer-details', 'disabled'))}}
 
                 <b>{{Form::label('35-b-answer','b. Have you been criminally change before any court?')}}<br></b>
-                {{Form::radio('35-b-answer', 'true')}}
+                {{Form::radio('35-b-answer', 'YES')}}
                 {{Form::label('35-b-answer','YES')}}
 
-                {{Form::radio('35-b-answer', 'false')}}
+                {{Form::radio('35-b-answer', 'NO')}}
                 {{Form::label('35-b-answer','NO')}}<br>
 
                 {{Form::label('35-b-answer-details','If YES, give details: ')}}<br>
@@ -58,10 +58,10 @@
             
 
                 <b>{{Form::label('36-answer','36. Have you ever been convicted of any crime or violation of any law, decree, ordinance or regulation by any court or tribunal?')}}<br></b>
-                {{Form::radio('36-answer', 'true')}}
+                {{Form::radio('36-answer', 'YES')}}
                 {{Form::label('36-answer','YES')}}
 
-                {{Form::radio('36-answer', 'false')}}
+                {{Form::radio('36-answer', 'NO')}}
                 {{Form::label('36-answer','NO')}}<br>
 
                 {{Form::label('36-answer-details', "If YES, give details: ")}}
@@ -70,10 +70,10 @@
                 <b>{{Form::label('37-answer','37. Have you ever been separated from the service in any of the following modes: 
                 resignation, retirement, dropped from the rolls, dismissal, termination, end of term, finished contract or 
                 phased out (abolition) in the public or private sector?')}}<br></b>
-                {{Form::radio('37-answer', 'true')}}
+                {{Form::radio('37-answer', 'YES')}}
                 {{Form::label('37-answer','YES')}}
 
-                {{Form::radio('37-answer', 'false')}}
+                {{Form::radio('37-answer', 'NO')}}
                 {{Form::label('37-answer','NO')}}<br>
 
                 {{Form::label('37-answer-details', "If YES, give details: ")}}
@@ -81,10 +81,10 @@
 
                 <b>{{Form::label('38-a-answer','38. a. Have you ever been a candidate in a national or local election held within the last year<br>
                 (except Barangay election)?')}}<br></b>
-                {{Form::radio('38-a-answer', 'true')}}
+                {{Form::radio('38-a-answer', 'YES')}}
                 {{Form::label('38-a-answer','YES')}}
 
-                {{Form::radio('38-a-answer', 'false')}}
+                {{Form::radio('38-a-answer', 'NO')}}
                 {{Form::label('38-a-answer','NO')}}<br>
 
                 {{Form::label('38-a-answer-details', "If YES, give details: ")}}
@@ -92,20 +92,20 @@
 
                 <b>{{Form::label('38-b-answer','b. Have you resigned from the government service during the three (3)-month period before<br>
                 the last election to promote/actively campaign for a national or local candidate?')}}<br></b>
-                {{Form::radio('38-b-answer', 'true')}}
+                {{Form::radio('38-b-answer', 'YES')}}
                 {{Form::label('38-b-answer','YES')}}
 
-                {{Form::radio('38-b-answer', 'false')}}
+                {{Form::radio('38-b-answer', 'NO')}}
                 {{Form::label('38-b-answer','NO')}}<br>
 
                 {{Form::label('38-b-answer-details', "If YES, give details: ")}}
                 {{Form::text('38-b-answer-details',null, array('class'=>'form-control', 'id' => '38-b-answer-details', 'disabled'))}}
 
                 <b>{{Form::label('39-answer','39. Have you acquired the status of an immigrant or permanent resident of another country?')}}<br></b>
-                {{Form::radio('39-answer', 'true')}}
+                {{Form::radio('39-answer', 'YES')}}
                 {{Form::label('39-answer','YES')}}
 
-                {{Form::radio('39-answer', 'false')}}
+                {{Form::radio('39-answer', 'NO')}}
                 {{Form::label('39-answer','NO')}}<br>
 
                 {{Form::label('39-answer-details', "If YES, give details: ")}}
@@ -115,30 +115,30 @@
                     (RA 7277); and (c) Solo Parents Welfare Act of 2000 (RA 8972), please answer the following items: </b><br>
 
                 <b>{{Form::label('40-a-answer','a.   Are you a member of any indigenous group?')}}<br></b>
-                {{Form::radio('40-a-answer', 'true')}}
+                {{Form::radio('40-a-answer', 'YES')}}
                 {{Form::label('40-a-answer','YES')}}
 
-                {{Form::radio('40-a-answer', 'false')}}
+                {{Form::radio('40-a-answer', 'NO')}}
                 {{Form::label('40-a-answer','NO')}}<br>
 
                 {{Form::label('40-a-answer-details', "If YES, please specify: ")}}
                 {{Form::text('40-a-answer-details',null, array('class'=>'form-control', 'id' => '40-a-answer-details', 'disabled'))}}
 
                 <b>{{Form::label('40-b-answer','b.   Are you a person with disability?')}}<br></b>
-                {{Form::radio('40-b-answer', 'true')}}
+                {{Form::radio('40-b-answer', 'YES')}}
                 {{Form::label('40-b-answer','YES')}}
 
-                {{Form::radio('40-b-answer', 'false')}}
+                {{Form::radio('40-b-answer', 'NO')}}
                 {{Form::label('40-b-answer','NO')}}<br>
 
                 {{Form::label('40-b-answer-details', "If YES, please specify ID No: ")}}
                 {{Form::number('40-b-answer-details',null, array('class'=>'form-control', 'id' => '40-b-answer-details', 'disabled'))}}
 
                 <b>{{Form::label('40-c-answer','c.   Are you a solo parent?')}}<br></b>
-                {{Form::radio('40-c-answer', 'true')}}
+                {{Form::radio('40-c-answer', 'YES')}}
                 {{Form::label('40-c-answer','YES')}}
 
-                {{Form::radio('40-c-answer', 'false')}}
+                {{Form::radio('40-c-answer', 'NO')}}
                 {{Form::label('40-c-answer','NO')}}<br>
                 
                 {{Form::label('40-c-answer-details', "If YES, please specify ID No: ")}}
@@ -161,7 +161,7 @@
             </div>
 
             <div class="oath">
-                <b><i>42. I declare under oath that I have personally accomplished this Personal Data Sheet which is a 'true', correct and 
+                <b><i>42. I declare under oath that I have personally accomplished this Personal Data Sheet which is a 'YES', correct and 
                     complete statement pursuant to the provisions of pertinent laws, rules and regulations of the Republic of the 
                     Philippines. I authorize the agency head/authorized representative to verify/validate the contents stated herein. 
                     I  agree that any misrepresentation made in this document and its attachments shall cause the filin'g 
@@ -217,21 +217,16 @@
                     <b>Person Administrating Oath: </b>
 
                 </div>     --}} 
+
+                <button type="submit" class="btn btn-secondary">Submit</button>
+                {!! Form::close() !!}
+                <a href="{{ route('download-excel') }}" class="btn btn-secondary">Download All Records</a>
                 
-                {{-- <div class="button">
-                    <button href='sender'>submit</button> --}}
-                            {{Form::close()}}
-                {{-- </div> --}}
-                
-                <div class="button">
-                    <button>Submit</button>
-                        {{Form::close()}}
-                </div>
 
             </div>
         </div>
     </div>
-{!! Form::close() !!}
+
 {{-- </form> --}}
 {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
@@ -260,7 +255,7 @@
 <script>
 $(function() {
     $('input[name="34-b-answer"]').change(function(){
-        if ($(this).is(':checked') && $(this).val() == 'true') {
+        if ($(this).is(':checked') && $(this).val() == 'YES') {
             $('input[name="34-b-answer-details"]').attr({
                 'disabled': false,
                 'required': true
@@ -273,7 +268,7 @@ $(function() {
         }
     });
     $('input[name="35-a-answer"]').change(function(){
-        if ($(this).is(':checked') && $(this).val() == 'true') {
+        if ($(this).is(':checked') && $(this).val() == 'YES') {
             $('input[name="35-a-answer-details"]').attr({
                 'disabled': false,
                 'required': true
@@ -286,7 +281,7 @@ $(function() {
         }
     });
     $('input[name="35-b-answer"]').change(function(){
-        if ($(this).is(':checked') && $(this).val() == 'true') {
+        if ($(this).is(':checked') && $(this).val() == 'YES') {
             $('input[name="35-b-answer-date"]').attr({
                 'disabled': false,
                 'required': true
@@ -307,7 +302,7 @@ $(function() {
         }
     });
     $('input[name="36-answer"]').change(function(){
-        if ($(this).is(':checked') && $(this).val() == 'true') {
+        if ($(this).is(':checked') && $(this).val() == 'YES') {
             $('input[name="36-answer-details"]').attr({
                 'disabled': false,
                 'required': true
@@ -320,7 +315,7 @@ $(function() {
         }
     });
     $('input[name="37-answer"]').change(function(){
-        if ($(this).is(':checked') && $(this).val() == 'true') {
+        if ($(this).is(':checked') && $(this).val() == 'YES') {
             $('input[name="37-answer-details"]').attr({
                 'disabled': false,
                 'required': true
@@ -333,7 +328,7 @@ $(function() {
         }
     });
     $('input[name="38-a-answer"]').change(function(){
-        if ($(this).is(':checked') && $(this).val() == 'true') {
+        if ($(this).is(':checked') && $(this).val() == 'YES') {
             $('input[name="38-a-answer-details"]').attr({
                 'disabled': false,
                 'required': true
@@ -346,7 +341,7 @@ $(function() {
         }
     });
     $('input[name="38-b-answer"]').change(function(){
-        if ($(this).is(':checked') && $(this).val() == 'true') {
+        if ($(this).is(':checked') && $(this).val() == 'YES') {
             $('input[name="38-b-answer-details"]').attr({
                 'disabled': false,
                 'required': true
@@ -359,7 +354,7 @@ $(function() {
         }
     });
     $('input[name="39-answer"]').change(function(){
-        if ($(this).is(':checked') && $(this).val() == 'true') {
+        if ($(this).is(':checked') && $(this).val() == 'YES') {
             $('input[name="39-answer-details"]').attr({
                 'disabled': false,
                 'required': true
@@ -372,7 +367,7 @@ $(function() {
         }
     });
     $('input[name="40-a-answer"]').change(function(){
-        if ($(this).is(':checked') && $(this).val() == 'true') {
+        if ($(this).is(':checked') && $(this).val() == 'YES') {
             $('input[name="40-a-answer-details"]').attr({
                 'disabled': false,
                 'required': true
@@ -385,7 +380,7 @@ $(function() {
         }
     });
     $('input[name="40-b-answer"]').change(function(){
-        if ($(this).is(':checked') && $(this).val() == 'true') {
+        if ($(this).is(':checked') && $(this).val() == 'YES') {
             $('input[name="40-b-answer-details"]').attr({
                 'disabled': false,
                 'required': true
@@ -398,7 +393,7 @@ $(function() {
         }
     });
     $('input[name="40-c-answer"]').change(function(){
-        if ($(this).is(':checked') && $(this).val() == 'true') {
+        if ($(this).is(':checked') && $(this).val() == 'YES') {
             $('input[name="40-c-answer-details"]').attr({
                 'disabled': false,
                 'required': true

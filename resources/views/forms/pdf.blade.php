@@ -78,12 +78,12 @@ activeSheetIndex = iSh;
     {{-- #34-A Question --}}
 <td colspan='4' class='x272' style='border-right:1px solid windowtext;'>a. within the third degree?</td>
 <td height='19' class='x112' width='26' style='text-align: left;height:14.25pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('34-a-answer', '', ($answers->{'34-a-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('34-a-answer', '', ($answers['34-a-answer'] ?? null) === 'YES') !!}
     {!! Form::label('34-a-answer', 'YES') !!}
 </td>
 <td class='x112'></td>
 <td colspan='4' height='19' class='x278' width='207' style='text-align: left;height:14.25pt;width:155.25pt;' align='left' valign='top'>
-    {!! Form::checkbox('34-a-answer', '', ($answers->{'34-a-answer'} ?? null) == 'false') !!}
+    {!! Form::checkbox('34-a-answer', '', ($answers['34-a-answer'] ?? null) === 'NO') !!}
     {!! Form::label('34-a-answer', 'NO') !!}
 </td>
 <td class='x22'></td>
@@ -101,12 +101,12 @@ activeSheetIndex = iSh;
     {{-- #34-B Question --}}
 <td colspan='4' class='x272' style='border-right:1px solid windowtext;'>b. within the fourth degree (for Local Government Unit - Career Employees)?</td>
 <td height='21' class='x122' width='26' style='text-align: left;height:15.75pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('34-b-answer', '', ($answers->{'34-b-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('34-b-answer', '', ($answers['34-b-answer'] ?? null) === 'YES') !!}
     {!! Form::label('34-b-answer', 'YES') !!}
 </td>
 <td colspan='2' class='x140' style='mso-ignore:colspan;'></td>
 <td height='21' class='x122' width='207' style='text-align: left;height:14.25pt;width:155.25pt;' align='left' valign='top'>
-    {!! Form::checkbox('34-b-answer', '', ($answers->{'34-b-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('34-b-answer', '', ($answers['34-b-answer'] ?? null) === 'NO') !!}
     {!! Form::label('34-b-answer', 'NO') !!}
 </td>
 <td colspan='3' class='x122' style='mso-ignore:colspan;border-right:2px solid windowtext;'></td>
@@ -121,10 +121,10 @@ activeSheetIndex = iSh;
 <td height='18' class='x28' style='height:13.8pt;'></td>
 <td class='x29'></td>
 <td colspan='4' class='x272' style='border-right:1px solid windowtext;'></td>
-<td colspan='6' class='x186'><span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp;&nbsp; </span>If YES, give details:<span style='mso-spacerun:yes;'>&nbsp; </span></td>
-<div>{{ $answers->{'34-b-answer-details'} ?? ' ' }}</div>
-
-    
+<td colspan='6' class='x186' style="padding-left: 1em">
+    If YES, give details:<br>
+    {{ $answers['34-b-answer-details'] ?? ' ' }}
+</td>
 </td>
 <td class='x82'></td>
  </tr>
@@ -148,12 +148,12 @@ activeSheetIndex = iSh;
     {{-- #35-A Question --}}
 <td colspan='4' rowspan='4' height='69' class='x292' style='border-right:1px solid windowtext;height:51.75pt;white-space:normal;word-wrap:break-word;'>a. Have you ever been found guilty of any administrative offense?</td>
 <td height='23' class='x36' width='26' style='text-align: left;height:17.25pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('35-a-answer', '', ($answers->{'35-a-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('35-a-answer', '', ($answers['35-a-answer'] ?? null) === 'YES') !!}
     {!! Form::label('35-a-answer', 'YES') !!}
 </td>
 <td colspan='2' class='x36' style='mso-ignore:colspan;'></td>
 <td height='23' class='x36' width='17' style='text-align: left;height:17.25pt;width:12.75pt;' align='left' valign='top'>
-    {!! Form::checkbox('35-a-answer', '', ($answers->{'35-a-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('35-a-answer', '', ($answers['35-a-answer'] ?? null) === 'NO') !!}
     {!! Form::label('35-a-answer', 'NO') !!}
 </td>
 <td colspan='3' class='x36' style='mso-ignore:colspan;border-right:2px solid windowtext;'></td>
@@ -161,13 +161,15 @@ activeSheetIndex = iSh;
  <tr height='19' style='mso-height-source:userset;height:14.25pt'>
 <td height='19' class='x51' style='height:14.25pt;'></td>
 <td class='x52'></td>
-<td colspan='6' class='x186'><span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp;&nbsp; </span>If YES, give details: </td>
+<td colspan='6' class='x186' style="padding-left: 1em">
+    If YES, give details:<br>
+</td>
 <td class='x101'></td>
  </tr>
  <tr height='19' style='mso-height-source:userset;height:14.25pt'>
 <td height='19' class='x51' style='height:14.25pt;'></td>
 <td class='x52'></td>
-<td class='x30'></td>
+<td class='x30' style="padding-left: 1em; font-weight: normal;">{{ $answers['35-a-answer-details'] ?? ' ' }}</td>
 <td class='x154'></td>
 <td colspan='4' class='x298' style='border-bottom:1px solid windowtext;'></td>
 <td class='x101'></td>
@@ -185,12 +187,12 @@ activeSheetIndex = iSh;
     {{-- #35-B Question --}}
 <td colspan='4' class='x42' style='mso-ignore:colspan;border-right:1px solid windowtext;'><div style='display:block;overflow:hidden'></div></td>
 <td height='23' class='x36' width='26' style='text-align: left;height:17.25pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('35-b-answer', '', ($answers->{'35-b-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('35-b-answer', '', ($answers['35-b-answer'] ?? null) === 'YES') !!}
     {!! Form::label('35-b-answer', 'YES') !!}
 </td>
 <td colspan='2' class='x84' style='mso-ignore:colspan;'><div style='display:block;overflow:hidden'></div></td>
 <td height='23' class='x36' width='26' style='text-align: left;height:17.25pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('35-b-answer', '', ($answers->{'35-b-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('35-b-answer', '', ($answers['35-b-answer'] ?? null) === 'NO') !!}
     {!! Form::label('35-b-answer', 'NO') !!}
 </td>
 <td colspan='3' class='x84' style='mso-ignore:colspan;border-right:2px solid windowtext;'><div style='display:block;overflow:hidden'></div></td>
@@ -204,7 +206,7 @@ activeSheetIndex = iSh;
  <tr height='19' style='mso-height-source:userset;height:14.25pt'>
 <td height='19' class='x40' style='height:14.25pt;'></td>
 <td class='x41'></td>
-<td colspan='6' class='x186'><span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp;&nbsp; </span>If YES, give details:<span style='mso-spacerun:yes;'>&nbsp; </span>________________________________</td>
+<td colspan='6' class='x186'><span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp;&nbsp; </span>If YES, give details:<span style='mso-spacerun:yes;'>
 <td class='x46'></td>
  </tr>
  <tr height='19' style='mso-height-source:userset;height:14.25pt'>
@@ -213,7 +215,7 @@ activeSheetIndex = iSh;
 <td class='x45'></td>
 <td colspan='2' class='x162'><div style='float:right'>Date Filed:&nbsp;</div></td>
 <td class='x155'></td>
-<td colspan='2' class='x156' style='mso-ignore:colspan;'></td>
+<td colspan='2' class='x156' style='mso-ignore:colspan;'>{{ $answers['35-b-answer-date'] }}</td>
 <td class='x46'></td>
  </tr>
  <tr height='19' class='x124' style='mso-height-source:userset;height:14.25pt'>
@@ -221,8 +223,7 @@ activeSheetIndex = iSh;
 <td class='x41'></td>
 <td colspan='3' class='x163'><div style='float:right'>Status of Case/s:</div></td>
 <td class='x155'></td>
-<td class='x157'></td>
-<td class='x103'></td>
+<td colspan='2' class='x156' style='mso-ignore:colspan;'>{{ $answers['35-b-answer-case'] }}</td>
 <td class='x46'></td>
  </tr>
  <tr height='7' style='mso-height-source:userset;height:5.25pt'>
@@ -239,30 +240,32 @@ activeSheetIndex = iSh;
 <td colspan='2' height='23' class='x182' style='height:17.25pt;'>36.</td>
 <td colspan='4' rowspan='4' height='71' class='x226' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:53.25pt;'>Have you ever been convicted of any crime or violation of any law, decree, ordinance or regulation by any court or tribunal?</td>
 <td height='23' class='x36' width='26' style='text-align: left;height:17.25pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('36-answer', '', ($answers->{'36-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('36-answer', '', ($answers['36-answer'] ?? null) === 'YES') !!}
     {!! Form::label('36-answer', 'YES') !!}
 </td>
 <td colspan='2' class='x36' style='mso-ignore:colspan;'></td>
 <td height='23' class='x36' width='26' style='text-align: left;height:17.25pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('36-answer', '', ($answers->{'36-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('36-answer', '', ($answers['36-answer'] ?? null) === 'NO') !!}
     {!! Form::label('36-answer', 'NO') !!}
 </td>
 <td colspan='3' class='x36' style='mso-ignore:colspan;border-right:2px solid windowtext;'></td>
  </tr>
- <tr height='20' style='mso-height-source:userset;height:15pt'>
-<td height='20' class='x38' style='height:15pt;'></td>
-<td class='x39'></td>
-<td colspan='6' class='x186'><span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp;&nbsp; </span>If YES, give details:<span style='mso-spacerun:yes;'>&nbsp; </span></td>
-<td class='x97'></td>
- </tr>
- <tr height='20' style='mso-height-source:userset;height:15pt'>
-<td height='20' class='x38' style='height:15pt;'></td>
-<td class='x39'></td>
-<td class='x96'></td>
-<td class='x144'></td>
-<td colspan='4' class='x195' style='border-bottom:1px solid windowtext;'></td>
-<td class='x97'></td>
- </tr>
+<tr height='19' style='mso-height-source:userset;height:14.25pt'>
+    <td height='19' class='x51' style='height:14.25pt;'></td>
+    <td class='x52'></td>
+    <td colspan='6' class='x186' style="padding-left: 1em">
+        If YES, give details:<br>
+    </td>
+    <td class='x101'></td>
+</tr>
+<tr height='19' style='mso-height-source:userset;height:14.25pt'>
+    <td height='19' class='x51' style='height:14.25pt;'></td>
+    <td class='x52'></td>
+    <td class='x30' style="padding-left: 1em; font-weight: normal;">{{ $answers['36-answer-details'] ?? '' }}</td>
+    <td class='x154'></td>
+    <td colspan='4' class='x298' style='border-bottom:1px solid windowtext;'></td>
+    <td class='x101'></td>
+</tr>
  <tr height='8' style='mso-height-source:userset;height:6pt'>
 <td height='7' class='x49' style='height:5.25pt;'><div style='display:block;overflow:hidden'></div></td>
 <td class='x50'><div style='display:block;overflow:hidden'></div></td>
@@ -275,30 +278,32 @@ activeSheetIndex = iSh;
 <td colspan='2' height='18' class='x182' style='height:13.5pt;'>37.</td>
 <td colspan='4' rowspan='4' height='57' class='x226' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:42.75pt;'>Have you ever been separated from the service in any of the following modes: resignation, retirement, dropped from the rolls, dismissal, termination, end of term, finished contract or phased out (abolition) in the public or private sector?</td>
 <td height='23' class='x36' width='26' style='text-align: left;height:17.25pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('37-answer', '', ($answers->{'37-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('37-answer', '', ($answers['37-answer'] ?? null) === 'YES') !!}
     {!! Form::label('37-answer', 'YES') !!}
 </td>
 <td colspan='2' class='x36' style='mso-ignore:colspan;'></td>
 <td height='23' class='x36' width='26' style='text-align: left;height:17.25pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('37-answer', '', ($answers->{'37-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('37-answer', '', ($answers['37-answer'] ?? null) === 'NO') !!}
     {!! Form::label('37-answer', 'NO') !!}
 </td>
 <td colspan='3' class='x36' style='mso-ignore:colspan;border-right:2px solid windowtext;'></td>
  </tr>
- <tr height='16' style='mso-height-source:userset;height:12pt'>
-<td height='16' class='x38' style='height:12pt;'></td>
-<td class='x39'></td>
-<td colspan='6' class='x186'><span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp;&nbsp; </span>If YES, give details: <span style='mso-spacerun:yes;'>&nbsp; </span></td>
-<td class='x123'></td>
- </tr>
- <tr height='15' style='mso-height-source:userset;height:11.25pt'>
-<td height='15' class='x38' style='height:11.25pt;'></td>
-<td class='x39'></td>
-<td class='x122'></td>
-<td class='x142'></td>
-<td colspan='4' class='x195' style='border-bottom:1px solid windowtext;'></td>
-<td class='x97'></td>
- </tr>
+<tr height='19' style='mso-height-source:userset;height:14.25pt'>
+    <td height='19' class='x51' style='height:14.25pt;'></td>
+    <td class='x52'></td>
+    <td colspan='6' class='x186' style="padding-left: 1em">
+        If YES, give details:<br>
+    </td>
+    <td class='x101'></td>
+</tr>
+<tr height='19' style='mso-height-source:userset;height:14.25pt'>
+    <td height='19' class='x51' style='height:14.25pt;'></td>
+    <td class='x52'></td>
+    <td class='x30' style="padding-left: 1em; font-weight: normal;">{{ $answers['37-answer-details'] ?? '' }}</td>
+    <td class='x154'></td>
+    <td colspan='4' class='x298' style='border-bottom:1px solid windowtext;'></td>
+    <td class='x101'></td>
+</tr>
  <tr height='8' style='mso-height-source:userset;height:6pt'>
 <td height='7' class='x49' style='height:5.25pt;'><div style='display:block;overflow:hidden'></div></td>
 <td class='x50'><div style='display:block;overflow:hidden'></div></td>
@@ -310,12 +315,12 @@ activeSheetIndex = iSh;
 <td colspan='2' height='23' class='x182' style='height:17.25pt;'>38.</td>
 <td colspan='4' rowspan='2' height='39' class='x226' style='border-right:1px solid windowtext;height:29.25pt;'>a. Have you ever been a candidate in a national or local election held within the last year (except Barangay election)?</td>
 <td height='23' class='x36' width='26' style='text-align: left;height:17.25pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('38-a-answer', '', ($answers->{'38-a-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('38-a-answer', '', ($answers['38-a-answer'] ?? null) === 'YES') !!}
              {!! Form::label('38-a-answer', 'YES') !!}
 </td>
 <td colspan='3' class='x36' style='mso-ignore:colspan;'></td>
 <td height='23' class='x36' width='52' style='text-align: left;height:17.25pt;width:19pt;' align='left' valign='top'>
-    {!! Form::checkbox('38-a-answer', '', ($answers->{'38-a-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('38-a-answer', '', ($answers['38-a-answer'] ?? null) === 'NO') !!}
     {!! Form::label('38-a-answer', 'NO') !!}
 </td>
 
@@ -325,7 +330,7 @@ activeSheetIndex = iSh;
 <td height='16' class='x38' style='height:12pt;'></td>
 <td class='x39'></td>
 <td colspan='4' class='x234'><div style='float:right'>If YES, give details:</div></td>
-<td colspan='2' class='x233' style='border-bottom:1px solid windowtext;'></td>
+<td colspan='2' class='x233' style='border-bottom:1px solid windowtext; text-align: left; padding-left: 1em; font-size: 10px;'>{{ $answers['38-a-answer-details'] ?? '' }}</td>
 <td class='x97'></td>
  </tr>
 
@@ -335,12 +340,12 @@ activeSheetIndex = iSh;
 <td class='x39'><div style='display:block;overflow:hidden'></div></td>
 <td colspan='4' class='x130' style='mso-ignore:colspan;border-right:1px solid windowtext;'><div style='display:block;overflow:hidden'></div></td>
 <td height='9' class='x100' width='26' style='text-align: left;height:6.75pt;width:19.5pt;' align='left' valign='top'>
-{!! Form::checkbox('38-b-answer', '', ($answers->{'38-b-answer'} ?? null) == 'true') !!}
+{!! Form::checkbox('38-b-answer', '', ($answers['38-b-answer'] ?? null) === 'YES') !!}
     {!! Form::label('38-b-answer', 'YES') !!}
 </td>
 <td colspan='3' class='x60' style='mso-ignore:colspan;'><div style='display:block;overflow:hidden'></div></td>
 <td height='9' class='x132' width='52' style='text-align: left;height:6.75pt;width:39pt;' align='left' valign='top'>
-    {!! Form::checkbox('38-b-answer', '', ($answers->{'38-b-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('38-b-answer', '', ($answers['38-b-answer'] ?? null) === 'NO') !!}
     {!! Form::label('38-b-answer', 'NO') !!}
 </td>
 <td class='x132'><div style='display:block;overflow:hidden'></div></td>
@@ -358,7 +363,7 @@ activeSheetIndex = iSh;
 <td height='19' class='x38' style='height:14.25pt;'></td>
 <td class='x39'></td>
 <td colspan='4' class='x234'><div style='float:right'>If YES, give details:</div></td>
-<td colspan='2' class='x233' style='border-bottom:1px solid windowtext;'></td>
+<td colspan='2' class='x233' style='border-bottom:1px solid windowtext; text-align: left; padding-left: 1em; font-size: 10px;'>{{ $answers['38-b-answer-details'] ?? '' }}</td>
 <td class='x97'></td>
  </tr>
  <tr height='6' style='mso-height-source:userset;height:4.5pt'>
@@ -372,29 +377,32 @@ activeSheetIndex = iSh;
 <td colspan='2' height='23' class='x182' style='height:17.25pt;'>39.</td>
 <td colspan='4' rowspan='4' height='66' class='x290' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:49.5pt;white-space:normal;word-wrap:break-word;'>Have you acquired the status of an immigrant or permanent resident of another country?</td>
 <td height='23' class='x36' width='26' style='text-align: left;height:17.25pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('39-answer', '', ($answers->{'39-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('39-answer', '', ($answers['39-answer'] ?? null) === 'YES') !!}
     {!! Form::label('39-answer', 'YES') !!}
 </td>
 <td colspan='3' class='x36' style='mso-ignore:colspan;'></td>
 <td height='23' class='x36' width='52' style='text-align: left;height:17.25pt;width:39pt;' align='left' valign='top'>
-    {!! Form::checkbox('39-answer', '', ($answers->{'39-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('39-answer', '', ($answers['39-answer'] ?? null) === 'NO') !!}
     {!! Form::label('39-answer', 'NO') !!}
 </td>
 <td colspan='2' class='x36' style='mso-ignore:colspan;border-right:2px solid windowtext;'></td>
  </tr>
- <tr height='16' style='mso-height-source:userset;height:12pt'>
-<td height='16' class='x38' style='height:12pt;'></td>
-<td class='x39'></td>
-<td colspan='7' class='x186' style='border-right:2px solid windowtext;'><span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp;&nbsp; </span>If YES, give details (country):&nbsp;</td>
- </tr>
  <tr height='19' style='mso-height-source:userset;height:14.25pt'>
-<td height='19' class='x38' style='height:14.25pt;'></td>
-<td class='x39'></td>
-<td class='x96'></td>
-<td class='x144'></td>
-<td colspan='4' class='x195' style='border-bottom:1px solid windowtext;'></td>
-<td class='x97'></td>
- </tr>
+    <td height='19' class='x51' style='height:14.25pt;'></td>
+    <td class='x52'></td>
+    <td colspan='6' class='x186' style="padding-left: 1em">
+        If YES, give details:<br>
+    </td>
+    <td class='x101'></td>
+</tr>
+<tr height='19' style='mso-height-source:userset;height:14.25pt'>
+    <td height='19' class='x51' style='height:14.25pt;'></td>
+    <td class='x52'></td>
+    <td class='x30' style="padding-left: 1em; font-weight: normal;">{{ $answers['39-answer-details'] ?? '' }}</td>
+    <td class='x154'></td>
+    <td colspan='4' class='x298' style='border-bottom:1px solid windowtext;'></td>
+    <td class='x101'></td>
+</tr>
  <tr height='8' style='mso-height-source:userset;height:6pt'>
 <td height='7' class='x49' style='height:5.25pt;'><div style='display:block;overflow:hidden'></div></td>
 <td class='x50'><div style='display:block;overflow:hidden'></div></td>
@@ -418,12 +426,12 @@ activeSheetIndex = iSh;
 <td class='x54'></td>
 <td colspan='4' rowspan='2' height='38' class='x228' style='border-right:1px solid windowtext;height:28.5pt;'>Are you a member of any indigenous group?</td>
 <td height='18' class='x122' width='26' style='text-align: left;height:13.5pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('40-a-answer', '', ($answers->{'40-a-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('40-a-answer', '', ($answers['40-a-answer'] ?? null) === 'YES') !!}
     {!! Form::label('40-a-answer', 'YES') !!}
 </td>
 <td colspan='3' class='x140' style='mso-ignore:colspan;'></td>
 <td height='18' class='x122' width='52' style='text-align: left;height:13.5pt;width:39pt;' align='left' valign='top'>
-    {!! Form::checkbox('40-a-answer', '', ($answers->{'40-a-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('40-a-answer', '', ($answers['40-a-answer'] ?? null) === 'NO') !!}
     {!! Form::label('40-a-answer', 'NO') !!}
 </td>
 <td colspan='2' class='x122' style='mso-ignore:colspan;border-right:2px solid windowtext;'></td>
@@ -433,7 +441,7 @@ activeSheetIndex = iSh;
 <td class='x54'></td>
 <td colspan='4' class='x135' style='mso-ignore:colspan;'>If YES, please specify:</td>
 <td class='x122'></td>
-<td class='x95'></td>
+<td class='x95'>{{ $answers['40-a-answer-details'] ?? '' }}</td>
 <td class='x92'></td>
  </tr>
  <tr height='18' style='mso-height-source:userset;height:13.5pt'>
@@ -442,12 +450,12 @@ activeSheetIndex = iSh;
     {{-- #40-B-Question --}}
 <td colspan='4' rowspan='2' height='38' class='x229' style='border-right:1px solid windowtext;height:28.5pt;'>Are you a person with disability?</td>
 <td height='18' class='x122' width='26' style='text-align: left;height:13.5pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('40-b-answer', '', ($answers->{'40-b-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('40-b-answer', '', ($answers['40-b-answer'] ?? null) === 'YES') !!}
     {!! Form::label('40-b-answer', 'YES') !!}
 </td>
 <td colspan='3' class='x140' style='mso-ignore:colspan;'></td>
 <td height='18' class='x122' width='52' style='text-align: left;height:13.5pt;width:39pt;' align='left' valign='top'>
-    {!! Form::checkbox('40-b-answer', '', ($answers->{'40-b-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('40-b-answer', '', ($answers['40-b-answer'] ?? null) === 'NO') !!}
     {!! Form::label('40-b-answer', 'NO') !!}
 </td>
 <td colspan='2' class='x122' style='mso-ignore:colspan;border-right:2px solid windowtext;'></td>
@@ -456,7 +464,7 @@ activeSheetIndex = iSh;
 <td height='20' class='x53' style='height:15pt;'></td>
 <td class='x54'></td>
 <td colspan='5' class='x136' style='mso-ignore:colspan;'>If YES, please specify ID No:&nbsp;</td>
-<td class='x95'></td>
+<td class='x95'>{{ $answers['40-b-answer-details'] ?? '' }}</td>
 <td class='x92'></td>
  </tr>
  <tr height='18' style='mso-height-source:userset;height:13.5pt'>
@@ -466,11 +474,11 @@ activeSheetIndex = iSh;
 <td colspan='2' class='x228'>Are you a solo parent?</td>
 <td colspan='2' class='x88' style='mso-ignore:colspan;border-right:1px solid windowtext;'></td>
 <td height='18' class='x122' width='26' style='text-align: left;height:13.5pt;width:19.5pt;' align='left' valign='top'>
-    {!! Form::checkbox('40-c-answer', '', ($answers->{'40-c-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('40-c-answer', '', ($answers['40-c-answer'] ?? null) === 'YES') !!}
     {!! Form::label('40-c-answer', 'YES') !!}</td>
 <td colspan='3' class='x140' style='mso-ignore:colspan;'></td>
 <td height='18' class='x122' width='52' style='text-align: left;height:13.5pt;width:39pt;' align='left' valign='top'>
-    {!! Form::checkbox('40-c-answer', '', ($answers->{'40-c-answer'} ?? null) == 'true') !!}
+    {!! Form::checkbox('40-c-answer', '', ($answers['40-c-answer'] ?? null) === 'NO') !!}
     {!! Form::label('40-c-answer', 'NO') !!}</td>
 </td>
 <td colspan='2' class='x122' style='mso-ignore:colspan;border-right:2px solid windowtext;'></td>
@@ -478,7 +486,7 @@ activeSheetIndex = iSh;
  <tr height='16' style='mso-height-source:userset;height:12pt'>
 <td colspan='6' rowspan='2' height='25' class='x249' style='border-right:1px solid windowtext;border-bottom:2px solid windowtext;height:18.75pt;'></td>
 <td colspan='5' class='x137' style='mso-ignore:colspan;'>If YES, please specify ID No:&nbsp;</td>
-<td class='x95'></td>
+<td class='x95'>{{ $answers['40-c-answer-details'] ?? '' }}</td>
 <td class='x94'></td>
  </tr>
  <tr height='9' style='mso-height-source:userset;height:6.75pt'>
@@ -495,10 +503,10 @@ activeSheetIndex = iSh;
 <td class='x121'>ADDRESS</td>
 <td colspan='3' class='x255' style='border-right:2px solid windowtext;border-bottom:1px solid windowtext;'>TEL. NO.</td>
  </tr>
- <tr height='32' style='mso-height-source:userset;height:24pt'>
-<td colspan='5' height='30' class='x265' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:22.5pt;'></td>
-<td class='x61'></td>
-<td colspan='3' class='x258' style='border-right:2px solid windowtext;border-bottom:1px solid windowtext;'></td>
+ <tr height='32' style='mso-height-source:userset;height:24pt;'>
+<td colspan='5' height='30' class='x265' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:22.5pt; font-weight: normal;'>{{ $answers['41-answer-name'] ?? '' }}</td>
+<td class='x61' style="font-weight: normal;">{{ $answers['41-answer-address'] ?? '' }}</td>
+<td colspan='3' class='x258' style='border-right:2px solid windowtext;border-bottom:1px solid windowtext; font-weight: normal;'>{{ $answers['41-answer-contact-no'] ?? '' }}</td>
  </tr>
  <tr height='32' style='mso-height-source:userset;height:24pt'>
 <td colspan='5' height='30' class='x265' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:22.5pt;'></td>
@@ -548,7 +556,7 @@ activeSheetIndex = iSh;
  </tr>
  <tr height='27' style='mso-height-source:userset;height:20.25pt'>
 <td height='27' class='x64' style='height:20.25pt;'></td>
-<td colspan='2' class='x222' style='border-bottom:1px solid windowtext;'>Government Issued ID:&nbsp;</td>
+<td colspan='2' class='x222' style='border-bottom:1px solid windowtext;'>Government Issued ID: {{ $answers['42-answer-gov-id'] ?? '' }}</td>
 <td class='x105'></td>
 <td class='x65'></td>
 <td class='x122'></td>
@@ -556,8 +564,8 @@ activeSheetIndex = iSh;
  </tr>
  <tr height='12' style='mso-height-source:userset;height:9pt'>
 <td height='12' class='x64' style='height:9pt;'><div style='display:block;overflow:hidden'></div></td>
-<td colspan='2' rowspan='2' height='27' class='x211' style='border-bottom:1px solid windowtext;height:20.25pt;'><div style='display:block;overflow:hidden'>ID/License/Passport No.:&nbsp;</div></td>
-<td rowspan='2' height='27' class='x177' style='border-bottom:1px solid windowtext;height:20.25pt;'><div style='display:block;overflow:hidden'></div></td>
+<td colspan='2' rowspan='2' height='27' class='x211' style='border-bottom:1px solid windowtext;height:20.25pt;'>ID/License/Passport No.: {{ $answers['42-answer-valid-id-no'] ?? '' }}</td>
+<td rowspan='2' height='27' class='x177' style='border-bottom:1px solid windowtext;height:20.25pt;'></td>
 <td class='x65'><div style='display:block;overflow:hidden'></div></td>
 <td class='x122'><div style='display:block;overflow:hidden'></div></td>
 <td class='x66'><div style='display:block;overflow:hidden'></div></td>
@@ -571,7 +579,7 @@ activeSheetIndex = iSh;
  </tr>
  <tr height='14' style='mso-height-source:userset;height:10.5pt'>
 <td height='14' class='x64' style='height:10.5pt;'></td>
-<td colspan='2' rowspan='2' height='30' class='x211' style='border-bottom:2px solid windowtext;height:22.5pt;'>Date/Place of Issuance:</td>
+<td colspan='2' rowspan='2' height='30' class='x211' style='border-bottom:2px solid windowtext;height:22.5pt;'>Date/Place of Issuance: {{ $answers['42-answer-issuance-details'] ?? '' }}</td>
 <td rowspan='2' height='30' class='x177' style='border-bottom:2px solid windowtext;height:22.5pt;'></td>
 <td class='x65'></td>
 <td class='x67'></td>

@@ -16,14 +16,13 @@ Route::get('/', function () {
     return view('forms.index');
 });
 
-Route::get('/sender', function(){
-    $pdf = App::make('snappy.pdf.wrapper');
-    $pdf->loadview('forms.pdf');
-    return $pdf->stream('forms.pdf.pdf');
-});
 Route::get('layout', function(){
     return view('forms.pdf');
 });
+
+Route::get('forms/renderPDF', 'FormController@renderPDF')->name('render-pdf');
+Route::get('forms/downloadExcel', 'FormController@downloadExcel')->name('download-excel');
+
 Route::resource ('forms', 'FormController');
 // Route::post('forms/upload', 'FormController@upload');
 // Route::get('forms/pdf', 'FormController@pdf')->name('forms.pdf');
