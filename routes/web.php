@@ -24,7 +24,3 @@ Route::get('forms/renderPDF', 'FormController@renderPDF')->name('render-pdf');
 Route::get('forms/downloadExcel', 'FormController@downloadExcel')->name('download-excel');
 
 Route::resource ('forms', 'FormController');
-// Route::post('forms/upload', 'FormController@upload');
-// Route::get('forms/pdf', 'FormController@pdf')->name('forms.pdf');
-// Route::get('/forms/sender', 'FormController@send')->name('forms.sender');
-// Route::resource ('forms', 'FormController');

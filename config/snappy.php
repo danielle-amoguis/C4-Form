@@ -37,7 +37,14 @@ return [
         'enabled' => true,
         'binary' => '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf"',
         'timeout' => false,
-        'options' => [],
+        'options' => [
+                        'page-height' => '297mm',
+                        'page-width'  => '210mm',
+                        'orientation'=>'portrait', 
+                        'margin-top'=>'0mm',
+                        'margin-bottom'=>'0mm'
+
+                    ],
         'env'     => [],
     ],
     
